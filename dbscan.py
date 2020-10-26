@@ -22,7 +22,7 @@ class DB_SCAN:
         self.dis_fun = dis_fun
     def get_neighborhood(self, D, point, radius):
         '''Find all points in dataset D within distance 'eps' of point p'''
-        return np.array([index for index, element in enumerate(D) if ((self.dis_func(element, D[point]) <= radius) and (index != point))])
+        return np.array([index for index, element in enumerate(D) if ((self.dis_fun(element, D[point]) <= radius) and (index != point))])
     def expand_cluster(self, point_ind, neighbors, label):
 
         """ Recursive method which expands the cluster until we have reached the border
